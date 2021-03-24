@@ -11,3 +11,6 @@ Then simply run ./triggerRococoUpdate.sh to pull the latest Rococo image and lau
 ./triggerRococoUpdate.sh 
 ```
 Once the chain has been synced fully, generate the hash of the session key, which is then used to sign the session/setKeys extrinsics in Polkadot.JS
+```
+docker exec -it rococo_polkadot_1 curl http://localhost:9933  -H "Content-Type:application/json;charset=utf-8" -d '{ "jsonrpc":"2.0", "id":1, "method":"author_rotateKeys" }'
+```
