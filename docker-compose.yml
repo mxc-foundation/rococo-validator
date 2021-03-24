@@ -1,0 +1,15 @@
+version: "3"
+services:
+  polkadot:
+    image: parity/rococo:rococo-v1
+    ports:
+      - 30333:30333 # TCP
+      - 9944:9944 # WS
+      - 9933:9933 # RPC
+    volumes:
+      - basePath:/polkadot
+    restart: always
+    command: -d /polkadot --validator --chain rococo --name MXC-Foundation-v2
+volumes:
+  basePath:
+
